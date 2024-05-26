@@ -1,12 +1,18 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+import { BrowserRouter, Route, RouterProvider, Routes } from 'react-router-dom'
+import Layout from './components/Layout'
+import Home from './pages/home'
 
 const App = () => {
   return (
-    <div>
-      <h1 className='text-gray-500'>Hello, Vite!</h1>
-      <p>Visit the guide for more information: <a href="https://vite-ruby.netlify.app/guide/rails" target="_blank" rel="noopener noreferrer">https://vite-ruby.netlify.app/guide/rails</a></p>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   )
 }
 

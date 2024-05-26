@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+       "jsx": "react",
+       "baseUrl": ".",
+       "checkJs": true,
+       "module": "ESNext",
+       "moduleResolution": "Node",
+       "paths": {
+         "@/*": ["app/frontend/*"]
+       }
+    }
+ }

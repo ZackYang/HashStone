@@ -1,3 +1,4 @@
+// @ts-nocheck
 // To see this message, add the following to the `<head>` section in your
 // views/layouts/application.html.erb
 //
@@ -27,4 +28,4 @@ console.log('Visit the guide for more information: ', 'https://vite-ruby.netlify
 // Example: Import a stylesheet in app/frontend/index.css
 // import '~/index.css'
 import "./main.scss";
-import('@/App')
+import('@/App');

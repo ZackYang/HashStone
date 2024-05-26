@@ -1,5 +1,8 @@
 {
     "ruby.rubocop.configFilePath": "/Users/yiyang/works/HashStone/.rubocop.yml",
     "ruby.rubocop.executePath": "/Users/yiyang/.rbenv/shims/",
-    "editor.defaultFormatter": "misogi.ruby-rubocop"
+    "editor.defaultFormatter": "misogi.ruby-rubocop",
+    "[javascriptreact]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    }
 }
