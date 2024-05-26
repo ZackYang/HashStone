@@ -1,0 +1,5 @@
+{
+    "ruby.rubocop.configFilePath": "/Users/yiyang/works/HashStone/.rubocop.yml",
+    "ruby.rubocop.executePath": "/Users/yiyang/.rbenv/shims/",
+    "editor.defaultFormatter": "misogi.ruby-rubocop"
+}

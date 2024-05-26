@@ -49,3 +49,15 @@ end
 gem "pg", "~> 1.5"
 
 gem "vite_rails", "~> 3.0"
+
+gem "haml", "~> 6.3"
+
+gem "haml-rails", "~> 2.1"
+
+gem "rubocop-performance", "~> 1.21"
+
+gem "rubocop-rails", "~> 2.25"
+
+gem "rubocop-rspec", "~> 2.29"
+
+gem "rubocop-rake", "~> 0.6.0"
