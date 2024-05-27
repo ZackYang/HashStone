@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
-# Defines the root path route ("/")
-root "homepage#index"
-  get 'homepage/index'
+  post "/graphql", to: "graphql#execute"
+  if Rails.env.development?
+    mount GraphiQL::Rails::Engine, at: "/graphiql", graphql_path: "/graphql"
+  end
+  # Defines the root path route ("/")
+  root "homepage#index"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

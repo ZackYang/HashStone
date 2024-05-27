@@ -61,3 +61,9 @@ gem "rubocop-rails", "~> 2.25"
 gem "rubocop-rspec", "~> 2.29"
 
 gem "rubocop-rake", "~> 0.6.0"
+
+gem "graphql", "~> 2.3"
+
+gem "graphiql-rails", "~> 1.10"
+
+gem "propshaft", "~> 0.9.0"
