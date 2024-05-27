@@ -26,5 +26,11 @@ module Types
     def test_field
       "Hello World!"
     end
+
+    field :user, Types::UserType, null: false, description: "Returns the current user."
+
+    def current_user
+      context[:current_user]
+    end
   end
 end
