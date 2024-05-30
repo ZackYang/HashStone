@@ -5,4 +5,5 @@ export default defineConfig({
   plugins: [
     RubyPlugin(),
   ],
+  publicDir: 'public',
 })

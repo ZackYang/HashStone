@@ -1,9 +1,10 @@
 !!!
 %html
-    %head
-        %title My Rails Application
-        = vite_client_tag
-        = vite_javascript_tag 'application'
-        = csrf_meta_tags
-    %body#root
-        = yield
+  %head
+    %title My Rails Application
+    = vite_client_tag
+    = vite_javascript_tag 'application'
+    = csrf_meta_tags
+  %body
+    #root
+      = yield

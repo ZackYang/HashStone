@@ -1,10 +1,17 @@
 {
     "ruby.rubocop.configFilePath": "/Users/yiyang/works/HashStone/.rubocop.yml",
     "ruby.rubocop.executePath": "/Users/yiyang/.rbenv/shims/",
-    "editor.defaultFormatter": "misogi.ruby-rubocop",
+    "editor.defaultFormatter": "GitHub.copilot",
     "[javascriptreact]": {
         "editor.defaultFormatter": "vscode.typescript-language-features"
     },
     "editor.formatOnSave": true,
-    "editor.formatOnSaveMode": "modifications"
+    "editor.formatOnSaveMode": "modifications",
+    "[javascript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "editor.tabSize": 2,
+    "[ruby]": {
+        "editor.defaultFormatter": "misogi.ruby-rubocop"
+    }
 }

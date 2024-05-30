@@ -1,16 +1,16 @@
 import React from "react";
 
-import VerticalDivider from "./VerticalDivider";
-import NavLink from "./NavLink";
-import { NavButton } from "./NavButton";
-const imgUrl = new URL('/images/logo.png', import.meta.url).href
+import VerticalDivider from "./VerticalDivider.jsx";
+import NavLink from "./NavLink.jsx";
+import { NavButton } from "./NavButton.jsx";
+const logoUrl = '/images/logo.png';
 
 function NavContent() {
   return (
-    <div className="sticky top-0 shadow-md bg-slate-950 py-6 z-30">
-      <div className="container mx-auto px-4 bg-transparent">
+    <div className="sticky flex top-0 shadow-md bg-slate-950 py-6 z-30">
+      <div className="container m-auto px-4 bg-transparent">
         <div className="flex justify-between">
-          <img src={imgUrl} alt="Logo" className="h-12" />
+          <img src={logoUrl} alt="Logo" className="h-12" />
           <div className="flex items-center gap-8">
             <NavLink href="/process">Process</NavLink>
             <NavLink href="/talents">Talents</NavLink>
@@ -22,7 +22,7 @@ function NavContent() {
             <NavButton className=" bg-sky-600" to="/register">
               Hire Telents
             </NavButton>
-            <NavButton className=" bg-orange-500" to="/register">
+            <NavButton className=" bg-orange-500" to="/developers/register">
               Find Jobs
             </NavButton>
             <VerticalDivider className="bg-slate-50" />
@@ -33,7 +33,6 @@ function NavContent() {
     </div>
   );
 }
-
 
 export default function Nav() {
   return (

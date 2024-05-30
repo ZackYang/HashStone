@@ -3,10 +3,11 @@
        "jsx": "react",
        "baseUrl": ".",
        "checkJs": true,
-       "module": "ESNext",
-       "moduleResolution": "Node",
+       "module": "nodenext",
+       "moduleResolution": "nodenext",
        "paths": {
          "@/*": ["app/frontend/*"]
        }
     }
  }
+ 
