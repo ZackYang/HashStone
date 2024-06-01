@@ -19,14 +19,14 @@ function NavContent() {
             <NavLink href="/blog">Blog</NavLink>
           </div>
           <div className="flex items-center gap-4">
-            <NavButton className=" bg-sky-600" to="/register">
+            <NavButton className=" bg-sky-600" to="/employer/register">
               Hire Telents
             </NavButton>
-            <NavButton className=" bg-orange-500" to="/developers/register">
+            <NavButton className=" bg-orange-500" to="/talnet/register">
               Find Jobs
             </NavButton>
             <VerticalDivider className="bg-slate-50" />
-            <NavLink href={'/api/auth/signin'}>Login</NavLink>
+            <NavLink href={'/sigin'}>Login</NavLink>
           </div>
         </div>
       </div>

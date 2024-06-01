@@ -1,5 +1,16 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users,
+             path: "/auth",
+             path_names: {
+               sign_in: "login",
+               sign_out: "logout",
+               sign_up: "register"
+             },
+             controllers: {
+               sessions: "users/sessions",
+               registrations: "users/registrations"
+             }
+
   post "/graphql", to: "graphql#execute"
 
   mount GraphiQL::Rails::Engine, at: "/graphiql", graphql_path: "/graphql" if Rails.env.development?

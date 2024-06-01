@@ -1,5 +1,4 @@
-import React from "react";
-import { TEInput, TERipple } from "tw-elements-react";
+import React, { useState } from "react";
 import { FloatingLabel, Button } from "flowbite-react";
 import HSButton from "@/components/shared/HSButton.jsx";
 import { Link } from "react-router-dom";
@@ -8,6 +7,51 @@ import { Link } from "react-router-dom";
 const logoUrl = '/images/logo.png';
 
 export default function Register() {
+  const [registerData, setRegisterData] = useState({
+    email: "",
+    password: "",
+    name: "",
+    type: "Talnet"
+  });
+
+  const [errors, setErrors] = useState({
+    email: "",
+    password: "",
+    name: "",
+    role: ""
+  });
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    await sendRequest()
+  };
+
+  const sendRequest = async () => {
+    fetch('http://localhost:3000/auth', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ user: registerData }),
+    }).then((response) => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        if (response.status === 422) {
+          response.json().then((data) => {
+            setErrors(data.errors);
+          });
+        }
+      }
+    }).then((data) => {
+      console.log(data);
+
+    }).catch((error) => {
+      console.error('There has been a problem with your fetch operation:', error);
+    });
+  }
+
   return (
     <section className="flex h-screen justify-center items-center bg-slate-100">
       <div className="container h-full p-10 m-auto">
@@ -39,13 +83,36 @@ export default function Register() {
                       </span>
                     </div>
 
-                    <form>
-                      <FloatingLabel variant="standard" label="Email" />
-                      <FloatingLabel variant="standard" type="password" label="Password" />
+                    <form onSubmit={handleSubmit}>
+                      <FloatingLabel
+                        variant="standard"
+                        label="Full Name"
+                        value={registerData.name}
+                        helperText={errors.name ? errors.name[0] : null}
+                        color={errors.name ? 'error' : 'default'}
+                        onChange={
+                          (e) => setRegisterData({ ...registerData, name: e.target.value })
+                        } />
+                      <FloatingLabel
+                        variant="standard"
+                        label="Email"
+                        value={registerData.email}
+                        helperText={errors.email ? errors.email[0] : null}
+                        color={errors.email ? 'error' : 'default'}
+                        onChange={(e) => setRegisterData({ ...registerData, email: e.target.value })}
+                      />
+                      <FloatingLabel variant="standard" type="password"
+                        label="Password"
+                        value={registerData.password}
+                        helperText={errors.password ? errors.password[0] : null}
+                        color={errors.password ? 'error' : 'default'}
+                        onChange={
+                          (e) => setRegisterData({ ...registerData, password: e.target.value })
+                        } />
                       <div className="mb-12 pb-1 pt-1 text-center">
-                        <HSButton>
-                          Sign in
-                        </HSButton>
+                        <Button type="submit" className="w-full">
+                          Sign Up
+                        </Button>
                         {/* <!--Forgot password link--> */}
                         <a href="#!">Terms and conditions</a>
                       </div>
@@ -53,14 +120,7 @@ export default function Register() {
                       {/* <!--Register button--> */}
                       <div className="flex items-center justify-between pb-6">
                         <p className="mb-0 mr-2">Have an account?</p>
-                        <TERipple rippleColor="light">
-                          <button
-                            type="button"
-                            className="inline-block rounded border-2 border-danger px-6 pb-[6px] pt-2 text-xs font-medium uppercase leading-normal text-danger transition duration-150 ease-in-out hover:border-danger-600 hover:bg-neutral-500 hover:bg-opacity-10 hover:text-danger-600 focus:border-danger-600 focus:text-danger-600 focus:outline-none focus:ring-0 active:border-danger-700 active:text-danger-700 dark:hover:bg-neutral-100 dark:hover:bg-opacity-10"
-                          >
-                            Login
-                          </button>
-                        </TERipple>
+
                       </div>
                     </form>
                   </div>

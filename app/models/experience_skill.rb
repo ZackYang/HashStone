@@ -1,0 +1,2 @@
+class ExperienceSkill < ApplicationRecord
+end

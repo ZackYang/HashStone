@@ -25,7 +25,7 @@ Style/FrozenStringLiteralComment:
   Enabled: false
 
 Style/StringLiterals:
-  EnforcedStyle: double_quotes
+  EnforcedStyle: single_quotes
 
 Naming/PredicateName:
   # Method define macros for dynamically generated method.

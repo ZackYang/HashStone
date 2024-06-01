@@ -10,8 +10,11 @@ const App = () => {
   )
 }
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-)
+setTimeout(() => {
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>,
+  )
+}, 1000)
+
