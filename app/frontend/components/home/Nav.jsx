@@ -22,11 +22,11 @@ function NavContent() {
             <NavButton className=" bg-sky-600" to="/employer/register">
               Hire Telents
             </NavButton>
-            <NavButton className=" bg-orange-500" to="/talnet/register">
+            <NavButton className=" bg-orange-500" to="/talent/register">
               Find Jobs
             </NavButton>
             <VerticalDivider className="bg-slate-50" />
-            <NavLink href={'/sigin'}>Login</NavLink>
+            <NavLink href={'/login'}>Login</NavLink>
           </div>
         </div>
       </div>

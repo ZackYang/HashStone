@@ -72,7 +72,7 @@ module Users
     # end
 
     def check_user_type
-      return if %w[talnet client].include?(params[:user][:type].downcase)
+      return if %w[talent client].include?(params[:user][:type].downcase)
 
       render json: { message: 'Role not allowed', errors: {
         role: ['Role not allowed']

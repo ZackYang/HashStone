@@ -1,7 +1,7 @@
 class Profile < ApplicationRecord
-  belongs_to :talnet, class_name: 'User', foreign_key: 'user_id'
+  belongs_to :talent, class_name: 'User', foreign_key: 'user_id'
 
-  has_one :addresses, as: :addressable, dependent: :destroy
+  # has_one :addresses, as: :addressable, dependent: :destroy
 
   has_many :profile_skills, dependent: :destroy
   has_many :skills, through: :profile_skills

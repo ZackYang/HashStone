@@ -2,8 +2,8 @@ import React from 'react';
 
 export default function Dashboard() {
   return (
-    <section className="flex h-screen justify-center items-center bg-slate-100">
-      <div className="container h-full p-10 m-auto">
+    <section className="flex h-dvh overflow-y-auto justify-center items-center bg-slate-100">
+      <div className="h-full p-10 m-auto">
         <div className="flex flex-col items-center justify-center max-w-md m-auto">
           <img src="/images/logo.png" className="w-24 h-24" alt="logo" />
           <h1 className="text-2xl font-bold text-center mt-4">Profile</h1>
@@ -25,7 +25,7 @@ export default function Dashboard() {
               <div className="flex flex-col space-y-1">
                 <label htmlFor="role" className="text-sm font-semibold text-gray-600">Role</label>
                 <select id="role" className="input-box">
-                  <option value="Talnet">Talnet</option>
+                  <option value="Talent">Talent</option>
                   <option value="Employer">Employer</option>
                 </select>
               </div>
