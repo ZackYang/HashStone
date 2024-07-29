@@ -66,6 +66,7 @@ group :development, :test do
   gem 'dotenv', '~> 3.1'
   gem 'letter_opener'
   gem 'pry-rails', '~> 0.3.9'
+  gem "faker", "~> 3.4"
 end
 
 group :development do
@@ -76,3 +77,4 @@ group :development do
   gem 'rubocop-rake', '~> 0.6.0'
   gem 'rubocop-rspec', '~> 2.29'
 end
+

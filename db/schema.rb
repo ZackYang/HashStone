@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_06_07_034539) do
+ActiveRecord::Schema[7.1].define(version: 2024_06_11_012249) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -65,6 +65,27 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_07_034539) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["profile_id"], name: "index_experiences_on_profile_id"
+  end
+
+  create_table "hospital_pharmacies", force: :cascade do |t|
+    t.bigint "hospital_id", null: false
+    t.bigint "pharmacy_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["hospital_id"], name: "index_hospital_pharmacies_on_hospital_id"
+    t.index ["pharmacy_id"], name: "index_hospital_pharmacies_on_pharmacy_id"
+  end
+
+  create_table "hospitals", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "pharmacies", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "profile_skills", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -135,6 +156,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_07_034539) do
   add_foreign_key "experience_skills", "experiences"
   add_foreign_key "experience_skills", "skills"
   add_foreign_key "experiences", "profiles"
+  add_foreign_key "hospital_pharmacies", "hospitals"
+  add_foreign_key "hospital_pharmacies", "pharmacies"
   add_foreign_key "profile_skills", "profiles"
   add_foreign_key "profile_skills", "skills"
   add_foreign_key "profiles", "users"

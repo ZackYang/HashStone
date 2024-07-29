@@ -7,3 +7,13 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+# Create hospitals
+5.times do |i|
+  Hospital.find_or_create_by!(name: "Hospital #{i + 1}")
+end
+
+# Create pharmacies
+20.times do |i|
+  Pharmacy.find_or_create_by!(name: "Pharmacy #{i + 1}")
+end

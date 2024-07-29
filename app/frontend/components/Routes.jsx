@@ -18,23 +18,25 @@ import Signin from "@/pages/Signin.jsx";
 // Talent Pages
 import TalentRegister from "@/pages/Register.jsx";
 import Dashboard from "@/pages/talent/Dashboard.jsx";
+import Pharmacy from "@/pages/Pharmacy.jsx";
 
 export default function RouteComponent() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route element={<AuthLayout />}>
+        <Route path="/" element={<Pharmacy />} />
+        {/* <Route element={<AuthLayout />}>
           <Route path="/login" element={<Signin />} />
           <Route path="/talent/register" element={<TalentRegister />} />
           <Route path="/employer/register" element={<EmployerRegister />} />
         </Route>
         <Route path="/talent" element={<TalentLayout />}>
           <Route index element={<Dashboard />} />
-        </Route>
-        <Route path="/" element={<Layout />} >
+        </Route> */}
+        {/* <Route path="/" element={<Layout />} >
           <Route index element={<Home />} />
           <Route path="*" element={<Home />} />
-        </Route>
+        </Route> */}
       </Routes>
     </BrowserRouter>
   );

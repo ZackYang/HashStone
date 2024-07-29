@@ -28,10 +28,16 @@ module Types
       'Hello World!'
     end
 
-    field :user, Types::UserType, null: false, description: 'Returns the current user.'
+    # field :user, Types::UserType, null: false, description: 'Returns the current user.'
 
-    def current_user
-      context[:current_user]
+    # def current_user
+    #   context[:current_user]
+    # end
+
+    field :hospitals, [Types::HospitalType], null: false, description: 'Returns a list of hospitals.'
+
+    def hospitals
+      Hospital.all
     end
   end
 end
